@@ -40,4 +40,11 @@ class ProductController extends Controller
         return redirect('/products')
             ->with('success', 'Product added successfully!');
     }
+
+    public function viewSingleProduct($id)
+    {
+        $product = Product::findOrFail($id);
+
+        return view('products.single-product', compact('product'));
+    }
 }

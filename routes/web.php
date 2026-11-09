@@ -22,3 +22,5 @@ Route::get('/add-product',[ProductController::class, 'addProduct'])->name('add-p
 Route::post('/store-product',[ProductController::class, 'storeProduct'])->name('products.store');
 
 
+Route::get('/products/{id}', [ProductController::class, 'viewSingleProduct'])
+    ->name('products.show');
