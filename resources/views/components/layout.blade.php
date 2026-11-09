@@ -9,6 +9,10 @@
         <button><a href="{{ route('show.login') }}">Login</a></button>
         <button><a href="{{ route('show.register') }}">Register</a></button>
 
+        <button>
+            <a href="{{ route('show.products') }}">Products</a>
+        </button>
+
         <form action="{{ route('logout') }}" method="POST" style="display: inline-block">
             @csrf
             <button type="submit">Logout</button>
