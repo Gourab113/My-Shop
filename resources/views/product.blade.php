@@ -20,6 +20,35 @@
             border-radius: 20px;
             border: 1px solid rgb(232, 231, 231);
         }
+
+        .view-btn {
+            background-color: #2563eb;
+        }
+
+        .cart-btn {
+            background-color: #16a34a;
+        }
+
+        .view-btn,
+        .cart-btn {
+            padding: 5px;
+            text-decoration: none;
+            font-size: 15px;
+            margin: 5px;
+
+        }
+
+        .link {
+            text-decoration: none;
+            color: white;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
     </style>
     <button>
         <a href="/add-product">Add New Product</a>
@@ -39,6 +68,24 @@
                 </p>
                 <img class="image" src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}"
                     width="200">
+
+                <div class="buttons">
+
+                    <button class="view-btn">
+                        <a class= "link" href="/products/{{ $product->id }}">
+                            View
+                        </a>
+                    </button>
+
+
+                    <button class="cart-btn">
+                        <a class="link" href="/cart/add/{{ $product->id }}">
+                            Add to Cart
+                        </a>
+                    </button>
+
+
+                </div>
 
             </div>
         @endforeach
